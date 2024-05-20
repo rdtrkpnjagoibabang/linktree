@@ -79,6 +79,34 @@
             box-shadow: 0 3px #666;
             transform: translateY(4px);
         }
+		 .share-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .share-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 2;
+        }
+        .share-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +124,13 @@
     <a href="https://ardiansyahgeo.github.io/kpnjagoibabang/" class="btn">Webgis</a>
 </div>
 
+<button class="share-btn" onclick="toggleShareMenu()">Share</button>
+<div class="share-menu" id="share-menu">
+    <a href="https://api.whatsapp.com/send?text=Lihat%20informasi%20mengenai%20RDTR%20KPN%20Jagoi%20Babang%20di%20link%20berikut%20[https://rdtrkpnjagoibabang.github.io/linktree/]" target="_blank">Share via WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=[https://rdtrkpnjagoibabang.github.io/linktree/]" target="_blank">Share via Facebook</a>
+    <a href="mailto:?subject=Informasi%20RDTR%20KPN%20Jagoi%20Babang&body=Lihat%20informasi%20mengenai%20RDTR%20KPN%20Jagoi%20Babang%20di%20link%20berikut%20[https://rdtrkpnjagoibabang.github.io/linktree/]">Share via Email</a>
+</div>
+
 <script>
     let slideIndex = 0;
     showSlides();
@@ -109,6 +144,15 @@
         if (slideIndex > slides.length) {slideIndex = 1}    
         slides[slideIndex-1].style.display = "block";  
         setTimeout(showSlides, 5000); // Ganti gambar setiap 5 detik
+    }
+	
+	function toggleShareMenu() {
+        let shareMenu = document.getElementById("share-menu");
+        if (shareMenu.style.display === "block") {
+            shareMenu.style.display = "none";
+        } else {
+            shareMenu.style.display = "block";
+        }
     }
 </script>
 
