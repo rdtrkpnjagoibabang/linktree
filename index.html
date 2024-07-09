@@ -79,7 +79,7 @@
             box-shadow: 0 3px #666;
             transform: translateY(4px);
         }
-		 .share-btn {
+        .share-btn {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -107,33 +107,60 @@
             margin: 5px 0;
             font-size: 18px;
         }
+        /* Countdown Timer Styles */
+        .countdown {
+            background-color: red;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .countdown h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+		
+		 .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        .logo img {
+            max-width: 100px;
+        }
     </style>
 </head>
 <body>
 
 <div class="slideshow-container">
-      <div class="mySlides" style="background-image: url('slide1.jpeg');"></div>
+    <div class="mySlides" style="background-image: url('slide1.jpeg');"></div>
     <div class="mySlides" style="background-image: url('slide2.jpg');"></div>
     <div class="mySlides" style="background-image: url('slide3.jpg');"></div>
-	    <div class="mySlides" style="background-image: url('slide4.jpg');"></div>
-		 <div class="mySlides" style="background-image: url('slide5.jpg');"></div>
-		  <div class="mySlides" style="background-image: url('slide6.jpg');"></div>
-		   <div class="mySlides" style="background-image: url('slide7.jpg');"></div>
-		    <div class="mySlides" style="background-image: url('slide8.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide4.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide5.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide6.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide7.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide8.jpg');"></div>
 </div>
-
+<!-- Logo -->
+<div class="logo">
+    <img src="logo.png" alt="Logo">
+</div>
 <div class="content">
-    <h2>RAPAT KONFIRMASI TEKNIS
-KEMENTERIAN/LEMBAGA
-</h2>
-    <h4>PENYUSUNAN MATERI TEKNIS 
-RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI KABUPATEN BENGKAYANG, PROVINSI KALIMANTAN BARAT
-</h4>
+    <h2>RAPAT KONFIRMASI TEKNIS KEMENTERIAN/LEMBAGA</h2>
+    <h4>PENYUSUNAN MATERI TEKNIS RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI KABUPATEN BENGKAYANG, PROVINSI KALIMANTAN BARAT</h4>
+    
+     <!-- Countdown Timer -->
+    <div class="countdown" id="countdown">
+        <h2>Acara dimulai: <span id="countdown-timer"></span></h2>
+    </div>
+
     <a href="https://us02web.zoom.us/j/8805166626?pwd=wNxeYWmqqV8NeftDVL5bpKL7RDCqNn.1&omn=87046519349" class="btn">Link Zoom</a>
     <a href="https://drive.google.com/drive/folders/169fdELztYRXDpXwd-uRiXAQw18ToKTbx?usp=drive_link" class="btn">Bahan Materi</a>
-	<a href="https://drive.google.com/drive/folders/1gIziDxpZNrhaBedL2yJmXJZTfa4pKbtT?usp=drive_link" class="btn">Masukan Tertulis</a>
-	<a href="https://forms.zohopublic.com/ptarc/form/PENYUSUNANRDTRKPNJAGOIBABANGPROVKALBAR1/formperma/fn2T-FUeep5dLyYQpGflopYUEGEpsAyDQFMirFVHVq0" class="btn">Absensi</a>
-	
+    <a href="https://drive.google.com/drive/folders/1gIziDxpZNrhaBedL2yJmXJZTfa4pKbtT?usp=drive_link" class="btn">Masukan Tertulis</a>
+    <a href="https://forms.zohopublic.com/ptarc/form/PENYUSUNANRDTRKPNJAGOIBABANGPROVKALBAR1/formperma/fn2T-FUeep5dLyYQpGflopYUEGEpsAyDQFMirFVHVq0" class="btn">Absensi</a>
 </div>
 
 <button class="share-btn" onclick="toggleShareMenu()">Share</button>
@@ -157,8 +184,8 @@ RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI K
         slides[slideIndex-1].style.display = "block";  
         setTimeout(showSlides, 5000); // Ganti gambar setiap 5 detik
     }
-	
-	function toggleShareMenu() {
+
+    function toggleShareMenu() {
         let shareMenu = document.getElementById("share-menu");
         if (shareMenu.style.display === "block") {
             shareMenu.style.display = "none";
@@ -166,6 +193,31 @@ RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI K
             shareMenu.style.display = "block";
         }
     }
+
+    // Countdown Timer Script
+    function countdownTimer() {
+        const endDate = new Date("Jul 11, 2024 09:00:00").getTime(); // Set the end date
+        const countdownElement = document.getElementById("countdown-timer");
+
+        const updateCountdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                countdownElement.innerHTML = "Event has started!";
+            }
+        }, 1000);
+    }
+
+    countdownTimer();
 </script>
 
 </body>
