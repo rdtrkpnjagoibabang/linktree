@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penyusunan RDTR KPN Jagoi Babang</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .slideshow-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .mySlides {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .fade {
+            animation: fade 1.5s ease-in-out infinite;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            width: 80%;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        h1 {
+            font-size: 50px;
+        }
+        h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .btn {
+            display: block;
+            width: 50%;
+            padding: 15px;
+            margin: 10px auto;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px #999;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #3e8e41;
+        }
+        .btn:active {
+            background-color: #3e8e41;
+            box-shadow: 0 3px #666;
+            transform: translateY(4px);
+        }
+        .share-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .share-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 2;
+        }
+        .share-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        /* Countdown Timer Styles */
+        .countdown {
+            background-color: red;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .countdown h2 {
+            font-size: 15px;
+            margin: 0;
+        }
+		
+		 .logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        .logo img {
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides" style="background-image: url('slide1.jpeg');"></div>
+    <div class="mySlides" style="background-image: url('slide2.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide3.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide4.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide5.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide6.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide7.jpg');"></div>
+    <div class="mySlides" style="background-image: url('slide8.jpg');"></div>
+</div>
+<!-- Logo -->
+<div class="logo">
+    <img src="logo.png" alt="Logo">
+</div>
+<div class="content">
+    <h2>Rapat Penyempurnaan Dokumen KLHS RDTR KPN Jagoi Babang di Kabupaten Bengkayang, Provinsi Kalimantan Barat</h2>
+    <h4>PENYUSUNAN MATERI TEKNIS RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI KABUPATEN BENGKAYANG, PROVINSI KALIMANTAN BARAT</h4>
+    
+     <!-- Countdown Timer -->
+    <div class="countdown" id="countdown">
+        <h4>Acara dimulai dalam: <span id="countdown-timer"></span></h4>
+    </div>
+
+    <a href="https://telkomsel.zoom.us/j/2967832413?omn=91672651663" class="btn">Link Zoom</a>
+    <a href="https://drive.google.com/drive/u/1/folders/1G2vbSDOZ4gstds4eTGnTc3Pgm6EqX7a8" class="btn">Bahan Materi</a>
+    <a href="https://drive.google.com/drive/u/1/folders/12n5PRNnlgw1JhuCDt4CnjKL69eBfzEOt" class="btn">Masukan Tertulis</a>
+    <a href="https://forms.zohopublic.com/ptarc/form/PENYUSUNANRDTRKPNJAGOIBABANGPROVKALBARPRAVALIDASIK/formperma/1N0GyBOoLXw-z2-OYjbRMbJNB2qb9oPYhvKiTETx02k" class="btn">Absensi</a>
+	 <a href="https://ardiansyahgeo.github.io/kpnjagoibabang/webgis.html" class="btn">WEBGIS RDTR KPN JAGOI BABANG</a>
+	   <a href="https://drive.google.com/drive/u/0/folders/1cEmW1SZLHyZiWlBLC_bIFdavhMMOZXmc" class="btn">AOI</a>
+</div>
+
+<button class="share-btn" onclick="toggleShareMenu()">Share</button>
+<div class="share-menu" id="share-menu">
+    <a href="https://api.whatsapp.com/send?text=Lihat%20informasi%20mengenai%20RDTR%20KPN%20Jagoi%20Babang%20di%20link%20berikut%20[https://rdtrkpnjagoibabang.github.io/linktree/]" target="_blank">Share via WhatsApp</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=[https://rdtrkpnjagoibabang.github.io/linktree/]" target="_blank">Share via Facebook</a>
+    <a href="mailto:?subject=Informasi%20RDTR%20KPN%20Jagoi%20Babang&body=Lihat%20informasi%20mengenai%20RDTR%20KPN%20Jagoi%20Babang%20di%20link%20berikut%20[https://rdtrkpnjagoibabang.github.io/linktree/]">Share via Email</a>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 5000); // Ganti gambar setiap 5 detik
+    }
+
+    function toggleShareMenu() {
+        let shareMenu = document.getElementById("share-menu");
+        if (shareMenu.style.display === "block") {
+            shareMenu.style.display = "none";
+        } else {
+            shareMenu.style.display = "block";
+        }
+    }
+
+    // Countdown Timer Script
+    function countdownTimer() {
+        const endDate = new Date("Nov 20, 2024 09:00:00").getTime(); // Set the end date
+        const countdownElement = document.getElementById("countdown-timer");
+
+        const updateCountdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(updateCountdown);
+                countdownElement.innerHTML = "Event has started!";
+            }
+        }, 1000);
+    }
+
+    countdownTimer();
+</script>
+
+</body>
+</html>
