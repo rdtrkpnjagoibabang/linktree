@@ -107,18 +107,7 @@
             margin: 5px 0;
             font-size: 18px;
         }
-        /* Countdown Timer Styles */
-        .countdown {
-            background-color: red;
-            border: 2px solid white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-        .countdown h2 {
-            font-size: 15px;
-            margin: 0;
-        }
+
 		
 		 .logo {
             position: absolute;
@@ -149,12 +138,11 @@
     <img src="logo.png" alt="Logo">
 </div>
 <div class="content">
-       <h4>PENYUSUNAN MATERI TEKNIS RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI KABUPATEN BENGKAYANG, PROVINSI KALIMANTAN BARAT</h4>
+    <h2>Rapat Penyempurnaan Dokumen KLHS RDTR KPN Jagoi Babang di Kabupaten Bengkayang, Provinsi Kalimantan Barat</h2>
+    <h4>PENYUSUNAN MATERI TEKNIS RENCANA DETAIL TATA RUANG KAWASAN PERBATASAN NEGARA (RDTR KPN) JAGOI BABANG DI KABUPATEN BENGKAYANG, PROVINSI KALIMANTAN BARAT</h4>
     
-     <!-- Countdown Timer -->
-    <div class="countdown" id="countdown">
-        <h4>Acara dimulai dalam: <span id="countdown-timer"></span></h4>
-    </div>
+  
+  
 
     <a href="pravalidasiklhs.html" class="btn">Rapat Pra Validasi KLHS (09.00-12.00)</a>
     <a href="pemuktahiranpeta.html" class="btn">Rapat Pemuktahiran Peta (13.00-16.00)</a>
@@ -167,55 +155,6 @@
     <a href="mailto:?subject=Informasi%20RDTR%20KPN%20Jagoi%20Babang&body=Lihat%20informasi%20mengenai%20RDTR%20KPN%20Jagoi%20Babang%20di%20link%20berikut%20[https://rdtrkpnjagoibabang.github.io/linktree/]">Share via Email</a>
 </div>
 
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 5000); // Ganti gambar setiap 5 detik
-    }
-
-    function toggleShareMenu() {
-        let shareMenu = document.getElementById("share-menu");
-        if (shareMenu.style.display === "block") {
-            shareMenu.style.display = "none";
-        } else {
-            shareMenu.style.display = "block";
-        }
-    }
-
-    // Countdown Timer Script
-    function countdownTimer() {
-        const endDate = new Date("Nov 20, 2024 09:00:00").getTime(); // Set the end date
-        const countdownElement = document.getElementById("countdown-timer");
-
-        const updateCountdown = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = endDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-            if (distance < 0) {
-                clearInterval(updateCountdown);
-                countdownElement.innerHTML = "Event has started!";
-            }
-        }, 1000);
-    }
-
-    countdownTimer();
-</script>
 
 </body>
 </html>
